@@ -5,16 +5,20 @@
 package org.opencv.features2d;
 
 import java.util.ArrayList;
+import java.util.List;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfKeyPoint;
+import org.opencv.utils.Converters;
 
 // C++: class BOWImgDescriptorExtractor
 //javadoc: BOWImgDescriptorExtractor
+
 public class BOWImgDescriptorExtractor {
 
     protected final long nativeObj;
     protected BOWImgDescriptorExtractor(long addr) { nativeObj = addr; }
 
+    public long getNativeObjAddr() { return nativeObj; }
 
     //
     // C++:   BOWImgDescriptorExtractor(Ptr_DescriptorExtractor dextractor, Ptr_DescriptorMatcher dmatcher)

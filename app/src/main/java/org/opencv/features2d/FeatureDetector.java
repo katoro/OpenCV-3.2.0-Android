@@ -13,11 +13,13 @@ import org.opencv.utils.Converters;
 
 // C++: class javaFeatureDetector
 //javadoc: javaFeatureDetector
+@Deprecated
 public class FeatureDetector {
 
     protected final long nativeObj;
     protected FeatureDetector(long addr) { nativeObj = addr; }
 
+    public long getNativeObjAddr() { return nativeObj; }
 
     private static final int
             GRIDDETECTOR = 1000,
@@ -81,6 +83,7 @@ public class FeatureDetector {
     //
 
     //javadoc: javaFeatureDetector::create(detectorType)
+    @Deprecated
     public static FeatureDetector create(int detectorType)
     {
         

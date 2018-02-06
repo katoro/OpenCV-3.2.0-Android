@@ -4,11 +4,13 @@
 //
 package org.opencv.ml;
 
+import java.lang.String;
 import org.opencv.core.Mat;
 import org.opencv.core.TermCriteria;
 
 // C++: class SVMSGD
 //javadoc: SVMSGD
+
 public class SVMSGD extends StatModel {
 
     protected SVMSGD(long addr) { super(addr); }
@@ -44,6 +46,29 @@ public class SVMSGD extends StatModel {
     {
         
         SVMSGD retVal = new SVMSGD(create_0());
+        
+        return retVal;
+    }
+
+
+    //
+    // C++: static Ptr_SVMSGD load(String filepath, String nodeName = String())
+    //
+
+    //javadoc: SVMSGD::load(filepath, nodeName)
+    public static SVMSGD load(String filepath, String nodeName)
+    {
+        
+        SVMSGD retVal = new SVMSGD(load_0(filepath, nodeName));
+        
+        return retVal;
+    }
+
+    //javadoc: SVMSGD::load(filepath)
+    public static SVMSGD load(String filepath)
+    {
+        
+        SVMSGD retVal = new SVMSGD(load_1(filepath));
         
         return retVal;
     }
@@ -266,6 +291,10 @@ public class SVMSGD extends StatModel {
 
     // C++: static Ptr_SVMSGD create()
     private static native long create_0();
+
+    // C++: static Ptr_SVMSGD load(String filepath, String nodeName = String())
+    private static native long load_0(String filepath, String nodeName);
+    private static native long load_1(String filepath);
 
     // C++:  TermCriteria getTermCriteria()
     private static native double[] getTermCriteria_0(long nativeObj);

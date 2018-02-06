@@ -8,11 +8,13 @@ package org.opencv.features2d;
 
 // C++: class Params
 //javadoc: Params
+
 public class Params {
 
     protected final long nativeObj;
     protected Params(long addr) { nativeObj = addr; }
 
+    public long getNativeObjAddr() { return nativeObj; }
 
     //
     // C++:   Params()
